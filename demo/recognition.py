@@ -6,10 +6,11 @@ from vietocr.tool.config import Cfg
 
 def get_config():
     config = Cfg.load_config_from_name('vgg_transformer')
-    # config['weights'] = './weights/transformerocr.pth'
+    config['pretrained'] = '/content/ArtistText/load_models/model_final.pth'
+    config['weights'] = '/content/ArtistText/load_models/model_final.pth'
     config['cnn']['pretrained']=False
     config['device'] = 'cuda:0'
-    config['predictor']['beamsearch']=False
+    config['predictor']['beamsearch']=True
     return config
 
 config = get_config()
